@@ -1,6 +1,5 @@
 file = open('input.txt', 'r')
 l = file.read().splitlines()
-import math
 
 pos_dict = {"N":0,"E":0}
 action_dict = {"N":1,"S":-1,"E":1,"W":-1}
@@ -60,13 +59,9 @@ for line in l:
         w_dict["E"] = x
         w_dict["N"] = y
     elif action =="L":
-        print("before ", w_dict["E"]," ",w_dict["N"])
-        print("rot ",action, " ", value)
         x,y = rot(w_dict["E"],w_dict["N"],value,False)
         w_dict["E"] = x
         w_dict["N"] = y
-        print("after ", w_dict["E"]," ",w_dict["N"])
-        print("")
     elif action == "F":
         pos_dict["E"] += w_dict["E"]*value
         pos_dict["N"] += w_dict["N"]*value
